@@ -222,24 +222,118 @@ footer{background:rgba(0,0,0,0.3);border-top:1px solid var(--border);padding:52p
 .reveal-delay-3{transition-delay:0.3s;}.reveal-delay-4{transition-delay:0.4s;}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .hero{grid-template-columns:1fr;padding:100px 5% 50px;}
-  .hero-right{display:none;}
+/* ── LARGE DESKTOP (1400px+) ── */
+@media(min-width:1400px){
+  nav{padding:0 6%;}
+  .hero{padding:110px 6% 60px;gap:80px;}
+  section{padding:96px 6%;}
+  footer{padding:56px 6% 32px;}
 }
+
+/* ── DESKTOP / LAPTOP (1024px - 1399px) ── */
+@media(max-width:1399px) and (min-width:1025px){
+  .hero h1{font-size:clamp(2rem,3.5vw,3.4rem);}
+  .nav-links{gap:20px;}
+  .nav-links a{font-size:13px;}
+}
+
+/* ── TABLET LANDSCAPE / SMALL LAPTOP (769px - 1024px) ── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;padding:100px 5% 48px;min-height:auto;}
+  .hero-right{display:none;}
+  .hero h1{font-size:clamp(2rem,5vw,3rem);}
+  .hero-stats{gap:28px;}
+  .about-wrap{grid-template-columns:1fr;}
+  .about-visual{margin-top:8px;}
+}
+
+/* ── TABLET PORTRAIT (601px - 900px) ── */
 @media(max-width:900px){
-  .about-wrap,.contact-wrap{grid-template-columns:1fr;}
-  .footer-grid{grid-template-columns:1fr 1fr;}
-  .process-steps::before{display:none;}
-  .form-row{grid-template-columns:1fr;}
+  nav{height:64px;padding:0 4%;}
+  .nav-logo img{height:40px;}
+  .nav-tagline{display:none;}
   .nav-links{display:none;}
   .nav-cta{display:none;}
   .hamburger{display:flex;}
+  .mobile-menu{top:64px;}
+  .hero{padding:88px 4% 44px;}
+  .hero h1{font-size:clamp(1.8rem,5vw,2.6rem);letter-spacing:-1px;}
+  .hero-sub{font-size:0.95rem;}
+  .hero-stats{gap:20px;flex-wrap:wrap;}
+  .stat-num{font-size:1.5rem;}
+  section{padding:72px 4%;}
+  .about-wrap,.contact-wrap{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .process-steps::before{display:none;}
+  .process-steps{grid-template-columns:repeat(3,1fr);}
+  .form-row{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
+  .testimonial-row{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .industries-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
 }
-@media(max-width:640px){
-  .hero h1{letter-spacing:-1px;}
-  .hero-stats{gap:24px;}
-  .footer-grid{grid-template-columns:1fr;}
+
+/* ── MOBILE LARGE (481px - 600px) ── */
+@media(max-width:600px){
+  nav{height:60px;padding:0 4%;}
+  .nav-logo img{height:36px;}
+  .mobile-menu{top:60px;}
+  .hero{padding:80px 4% 40px;}
+  .hero h1{font-size:clamp(1.7rem,6vw,2.2rem);letter-spacing:-0.5px;}
+  .hero-sub{font-size:0.9rem;margin-bottom:28px;}
+  .btn-primary,.btn-secondary{padding:11px 20px;font-size:14px;}
+  .hero-actions{gap:10px;margin-bottom:36px;}
+  .hero-stats{gap:16px;}
+  .stat-num{font-size:1.4rem;}
+  .stat-label{font-size:11px;}
+  section{padding:60px 4%;}
+  .section-title{font-size:clamp(1.5rem,5vw,2rem);}
+  .services-grid{grid-template-columns:1fr;}
   .about-stat-row{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .contact-wrap{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .industries-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+/* ── MOBILE SMALL (max 480px — most Android/iPhone) ── */
+@media(max-width:480px){
+  nav{height:58px;padding:0 3.5%;}
+  .nav-logo img{height:32px;}
+  .mobile-menu{top:58px;padding:20px 4%;}
+  .hero{padding:76px 4% 36px;}
+  .hero h1{font-size:clamp(1.5rem,7vw,2rem);letter-spacing:-0.5px;line-height:1.15;}
+  .hero-sub{font-size:0.875rem;}
+  .btn-primary,.btn-secondary{padding:10px 18px;font-size:13.5px;border-radius:8px;}
+  .hero-actions{flex-direction:column;gap:10px;margin-bottom:32px;}
+  .btn-primary,.btn-secondary{text-align:center;justify-content:center;}
+  .hero-stats{gap:16px;}
+  .stat-num{font-size:1.3rem;}
+  section{padding:52px 4%;}
+  .section-title{font-size:1.5rem;letter-spacing:-0.5px;}
+  .service-card{padding:22px;}
+  .about-stat-row{grid-template-columns:1fr 1fr;gap:10px;}
+  .about-stat-box{padding:16px 12px;}
+  .about-stat-box .num{font-size:1.5rem;}
+  .process-steps{grid-template-columns:1fr 1fr;}
+  .contact-form{padding:24px 20px;}
+  .footer-grid{grid-template-columns:1fr;gap:28px;}
+  .footer-brand p{max-width:100%;}
+  .testimonial-row{grid-template-columns:1fr;}
+  .testimonial{padding:20px;}
+  .industries-grid{grid-template-columns:1fr 1fr;}
+  .hero-scroll{display:none;}
+}
+
+/* ── IPHONE SE / VERY SMALL (max 375px) ── */
+@media(max-width:375px){
+  .hero h1{font-size:1.5rem;}
+  .hero-actions{flex-direction:column;}
+  .about-stat-row{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .industries-grid{grid-template-columns:1fr;}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}*{animation:none!important;}}
 </style>
