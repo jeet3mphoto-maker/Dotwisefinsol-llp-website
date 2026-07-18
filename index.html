@@ -870,19 +870,21 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 
 // Counter trigger
+// Observe each counter individually so all trigger when visible
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting && !countersStarted) {
-      countersStarted = true;
-      counters.forEach(el => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      if (!el.dataset.animated) {
+        el.dataset.animated = 'true';
         animateCounter(el, parseInt(el.dataset.target));
-      });
+        counterObserver.unobserve(el);
+      }
     }
   });
 }, { threshold: 0.3 });
 
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) counterObserver.observe(heroStats);
+counters.forEach(el => counterObserver.observe(el));
 
 // ── FORM SUBMIT ──────────────────────────────────────────────────────────────
 function handleSubmit(btn) {
